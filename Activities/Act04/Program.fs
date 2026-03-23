@@ -7,7 +7,7 @@ let numer (n: RationalNumber) = fst n
 let denom (n: RationalNumber) = snd n
 
 /// Fix this function so that the rational numbers are comparable.
-let makeRat n d = (n, d)
+let makeRat n d = if d < 0 then (-1 * n, -1 * d) else (n, d)
 
 let r0 = makeRat 1 (-2)
 let r1 = makeRat (-1) 2
