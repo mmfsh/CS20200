@@ -11,7 +11,10 @@ type Shape =
 /// Modify this function to compute the area of a given shape.
 /// Hint: To compute a square root, use `sqrt`.
 let area shape =
-  0.0
+  match shape with
+  | Circle n -> 3.14 * n * n
+  | Square n -> n * n
+  | Triangle (a, b, c) -> 0
 
 let circle = Circle 0.5
 let square = Square 1.0
