@@ -11,12 +11,18 @@ let cdr lst =
   | _ -> failwith "Empty list is given."
 
 /// Modify this function to return the last element of the given list.
-let last lst =
-  failwith "Implement"
+let rec last lst =
+  match lst with
+  | [x] -> x
+  | _ :: tl -> last tl
+  | [] -> failwith "Empty list has given"
 
 /// Modify this function to return the last but one element of the given list.
-let lastButOne lst =
-  failwith "Implement"
+let rec lastButOne lst =
+  match lst with
+  | [x; _] -> x
+  | _ :: tl -> lastButOne tl
+  | _ -> failwith "List has fewer than two elements"
 
 printfn "last element: %d" <| last [ 1; 2; 3; 4; 5 ]
 printfn "last element: %s" <| last [ "a"; "bcd"; "efg" ]

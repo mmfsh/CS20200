@@ -12,10 +12,12 @@ type Shape =
 /// Hint: To compute a square root, use `sqrt`.
 let area shape =
   match shape with
-  | Circle n -> 3.14 * n * n
-  | Square n -> n * n
-  | Triangle (a, b, c) -> 0
-
+  | Circle r -> System.Math.PI * r * r
+  | Square s -> s * s
+  | Triangle (a, b, c) -> 
+      let s = (a + b + c) / 2.0
+      sqrt (s * (s - a) * (s - b) * (s - c))
+      
 let circle = Circle 0.5
 let square = Square 1.0
 let triangle = Triangle (1.0, 1.0, 1.0)
